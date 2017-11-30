@@ -16,6 +16,14 @@ module.exports = class KoaTrain extends Train {
     return this;
   }
 
+  setStatus(code) {
+    if (code) {
+      const { proxy } = this;
+      proxy.response.status = code;
+    }
+    return this;
+  }
+
   get isAnswered() {
     return (this.proxy.state.answers || []).length
   }

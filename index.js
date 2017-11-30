@@ -24,7 +24,7 @@ module.exports = function (path, ...middlewares) {
             await middleware.run(train);
           }
         } catch (e) {
-          if (!(e instanceof Break)) {
+          if (!(e.isBreakInstance)) {
             throw e;
           }
         }
