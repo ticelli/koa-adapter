@@ -27,4 +27,9 @@ module.exports = class KoaTrain extends Train {
   get isAnswered() {
     return (this.proxy.state.answers || []).length
   }
+
+  setHeader(key, value) {
+    this.set(key, value);
+    return this;
+  }
 };
